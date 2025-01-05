@@ -1,13 +1,13 @@
-<x-app-layout title="Home Page">
+<x-app-layout title="QuickNews - Stay Updated with the Latest Headlines" description="{{ __('home.description') }}">
     @section('hero')
     <div class="w-full text-center py-32">
         <h1 class="text-2xl md:text-3xl font-bold text-center lg:text-5xl text-gray-700">
-            {{ __('home.hero.title') }} <span class="text-yellow-500">&lt;YELO&gt;</span> <span class="text-gray-900">
+            {{ __('home.hero.title') }} <span class="text-yellow-500">Quick</span> <span class="text-gray-900">
                 News</span>
         </h1>
-        <p class="text-gray-500 text-lg mt-1">{{ __('home.hero.desc') }}</p>
+        <p class="text-gray-500 text-lg mt-4">{{ __('home.hero.desc') }}</p>
         <a class="px-3 py-2 text-lg text-white bg-gray-800 rounded mt-5 inline-block"
-            href="http://127.0.0.1:8000/blog">{{ __('home.hero.cta') }}</a>
+            href="{{ route('posts.index') }}">{{ __('home.hero.cta') }}</a>
     </div>
     @endsection
 

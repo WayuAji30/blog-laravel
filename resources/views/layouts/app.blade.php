@@ -11,10 +11,15 @@
     <meta property="og:title" content="{{ isset($title) ? $title . '' : ''}}" />
     <meta property="og:type" content="website.blog" />
     <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:image" content="{{ isset($image) ? $image . '' : ''}}" />
+    <meta property="og:image" content="{{ isset($image) ? $image . '' : '/logo.png'}}" />
     <meta property="og:description" content="{{ isset($description) ? $description . '' : ''}}" />
-    <meta property="og:site_name" content="IMDb" />
+    <meta property="og:site_name" content="QuickNews" />
     <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
