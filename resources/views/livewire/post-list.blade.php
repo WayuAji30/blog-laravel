@@ -5,7 +5,7 @@
             <button class="text-gray-500 text-xs mr-3" wire:click='clearFilters'>X</button>
             @endif
             @if ($search)
-            Searching <strong>"{{ $search }}"</strong>
+            {{ __('blog.searching') }} <strong>"{{ $search }}"</strong>
             @endif
             @if ($this->activeCategory)
             <x-badge wire:navigate href="{{ route('posts.index', ['category'=>$this->activeCategory->slug]) }}"
@@ -16,16 +16,16 @@
         </div>
         <div class="flex items-center space-x-4 font-light ">
             <x-checkbox wire:model.live='popular' />
-            <x-label>Popular</x-label>
+            <x-label>{{ __('blog.popular') }}</x-label>
             <button class="{{ $sort === 'desc' ? 'text-gray-900 border-b border-gray-700' : 'text-gray-500'}} py-4"
-                wire:click="setSort('desc')">Latest</button>
+                wire:click="setSort('desc')">{{ __('blog.latest') }}</button>
             <button class="{{ $sort === 'asc' ? 'text-gray-900 border-b border-gray-700' : 'text-gray-500'}} py-4"
-                wire:click="setSort('asc')">Oldest</button>
+                wire:click="setSort('asc')">{{ __('blog.oldest') }}</button>
         </div>
     </div>
     <div class="py-4">
         @foreach ($this->posts as $post)
-        <x-posts.post-item :key="$post->id" :post="$post" />
+        <x-posts.post-item wire:key="{{$post->id}}" :post="$post" />
         @endforeach
     </div>
 
